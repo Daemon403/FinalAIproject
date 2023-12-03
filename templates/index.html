@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('ashesi.jpg') center/cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* 100% of the viewport height */
+        }
+
+        p {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .btn-take-attendance {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-take-attendance:hover {
+            background-color: #218838;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust the background color and opacity */
+            padding: 20px; /* Add some padding for better visibility */
+            border-radius: 10px; /* Add border-radius for rounded corners */
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Welcome to the Attendance System</p>
+        <div class="button-container">
+            <form method="post" action="/take_attendance">
+                <button type="submit" class="btn btn-take-attendance">Take Attendance</button>
+            </form>
+
+            <form method="post" action="/record">
+                <button type="submit" class="btn btn-take-attendance">Add Student</button>
+            </form>
+
+            <form method="post" action="/view_attendance">
+                <button type="submit" class="btn btn-take-attendance">View Attendance</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

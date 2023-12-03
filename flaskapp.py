@@ -39,14 +39,14 @@ def add():
         for (x,y,w,h) in faces:
             crop_img=frame[y:y+h, x:x+w, :]
             resized_img=cv2.resize(crop_img, (50,50))
-            if len(faces_data)<=10 and i%10==0:
+            if len(faces_data)<=30 and i%30==0:
                 faces_data.append(resized_img)
             i=i+1
             cv2.putText(frame, str(len(faces_data)), (50,50), cv2.FONT_HERSHEY_COMPLEX, 1, (50,50,255), 1)
             cv2.rectangle(frame, (x,y), (x+w, y+h), (50,50,255), 1)
         cv2.imshow("Frame",frame)
         k=cv2.waitKey(1)
-        if k==ord('q') or len(faces_data)==10:
+        if k==ord('q') or len(faces_data)==30:
             break
     video.release()
     cv2.destroyAllWindows()
@@ -121,7 +121,7 @@ def take_attendance():
             color_outer = (128, 0, 128)
             color_inner = (128, 0, 128)
 
-            cv2.rectangle(frame, (x, y), (x+w, y+h), color_outer, 2)
+            cv2.rectangle(frame, (x, y), (x+w, y+h), color_outer, 1)
             cv2.rectangle(frame, (x, y), (x+w, y+h), color_outer, 3)
             cv2.rectangle(frame, (x, y-40), (x+w, y), color_inner, -1)
             cv2.putText(frame, str(output[0]), (x, y-15), cv2.FONT_HERSHEY_DUPLEX, 1, (255, 255, 255), 1)
