@@ -28,4 +28,4 @@ Scikit-learn
 
 - the training of the model was done OpenCV and KNearest Neighbors
 - the trained images and names were packaged into pickled(.pkl) files
-- 
+- LINK TO VIDE: https://youtu.be/MXPYaM-XLPE
